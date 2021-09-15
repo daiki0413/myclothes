@@ -1,24 +1,13 @@
-# README
+# YOUR PROJECT TITLE "MyCLoth"
+#### Video Demo:  https://www.youtube.com/watch?v=MF-_b_gdFos
+#### Description:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+自分自身持っている洋服が多すぎてどんな洋服を持っていたか分からなくなってしまう時があるので、アプリケーションで簡単に見ることが出来たら便利だと思い作成しました。
 
-* Ruby version
+Userテーブルではアカウント作成のための新規登録ページ、ログインページを作成しました。
+Clothテーブルでは保存した写真を一覧で見ることができ、new.html.erbで新規作成、edit.html.erbで編集、削除ができます。statistics_tag.html.erb、statistics_color.html.erb、statistics_season.html.erbでは保存されたデータを元にタグ、カラー、シーズンごとにアイテム数をカウントしています。また、購入した商品の合計額や今月の使用額、過去一年間の購入履歴を作成しました。また、絞り込み機能ではタグ・カラー・シーズン・メモに記載された内容で探したいアイテムを絞り込むことが出来ます。
+Categoryテーブルではタグごとにアイテムが表示されます。どのページを開いている時でもクリック出来るようにnavbarに書き込むことで使いやすくしました。
+サクセスメッセージやエラーメッセージを表示することでどんな人にも分かりやすい設計にしました。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+統計機能ではデータをグラフ化してさらに便利なアプリケーションの開発を試みています。

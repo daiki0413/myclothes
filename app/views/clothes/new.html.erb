@@ -1,0 +1,38 @@
+<div class="container">
+
+    <%if @error_message%>
+        <h4><p class="text-danger"><%=@error_message%></p></h4>
+    <%end%>
+
+    <%=form_tag("/create") do%>
+        <form>
+            <div class="form-group">
+                <%=label_tag "form-tag","Tag"%><i class="fas fa-asterisk asterisk"></i>
+                <%=select_tag 'item[category_item_id]', options_from_collection_for_select(@categories, :id, :name),prompt: '選択して下さい', class:"form-control"%>
+            </div>
+            <div class="form-group">
+                <%=label_tag "form-color","Color"%><i class="fas fa-asterisk asterisk"></i>
+                <%=select_tag 'item[category_color_id]', options_from_collection_for_select(@categoryColors, :id, :name), prompt: '選択して下さい', class:"form-control"%>
+            </div>
+            <div class="form-group">
+                <%=label_tag "form-season","Season"%><i class="fas fa-asterisk asterisk"></i>
+                <%=select_tag 'item[category_season_id]', options_from_collection_for_select(@categorySeasons, :id, :name), prompt: '選択して下さい',class:"form-control"%>
+            </div>
+            <div class="form-group">
+                <%=label_tag "form-price","Price"%>
+                <%=text_field :item, :price, class:"form-control", id:"form-price", placeholder:"Price"%>
+            </div>
+            <div class="form-group">
+                <%=label_tag "form-date","Date"%>
+                <%=date_field :item, :date ,id:"form-date",class:'form-control'%>
+            </div>
+            <%=label_tag "form-memo","Memo"%>
+            <textarea name="memo" class="form-control" rows="3">
+            </textarea>
+
+            <div class="button">
+                <%=submit_tag "Add" ,class:"btn btn-primary"%>
+            <div>
+        </form>
+    <%end%>
+</div>

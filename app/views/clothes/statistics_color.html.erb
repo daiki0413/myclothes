@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="list-group">
+        <div class="list-group-item">
+            <h5 class="list-group-item-heading">全アイテム数</h5>
+            <p class="list-group-item-text"><%=@items_count%></p>
+        </div>
+        <div class="list-group-item">
+            <h5 class="list-group-item-heading">アイテム総額</h5>
+            <p class="list-group-item-text"><%=@total_price%>円</p>
+        </div>
+        <div class="list-group-item">
+            <h5 class="list-group-item-heading">今月の購入額</h5>
+            <p class="list-group-item-text"><%=@current_month_price%>円</p>
+        </div>
+        <div class="list-group-item">
+            <h5 class="list-group-item-heading">過去一年間の購入履歴</h5>
+            <%@year_prices.each do |year_price|%>
+                <p class="list-group-item-text"><%=year_price%>円</p>
+            <%end%>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="/statistics/tag">タグ</a></li>
+        <li role="presentation" class="active"><a href="/statistics/color">カラー</a></li>
+        <li role="presentation"><a href="/statistics/season">シーズン</a></li>
+    </ul>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">カラー</th>
+                <th scope="col">個数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%@categoryColors.zip(@colors) do |categoryColor,color|%>
+                <tr>
+                    <td><%=categoryColor.name%></td>
+                    <td><%=color.count%></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

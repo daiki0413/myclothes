@@ -1,7 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.find_or_create_by(name:"Tops")
+Category.find_or_create_by(name:"Bottoms")
+Category.find_or_create_by(name:"Setup")
+Category.find_or_create_by(name:"Shoes")
+Category.find_or_create_by(name:"Bag")
+Category.find_or_create_by(name:"Outer")
+Category.find_or_create_by(name:"Dress")
+Category.find_or_create_by(name:"Accessory")
+Category.find_or_create_by(name:"Other")
+
+CategoryColor.find_or_create_by(name:"ホワイト")
+CategoryColor.find_or_create_by(name:"ブラック")
+CategoryColor.find_or_create_by(name:"グレー")
+CategoryColor.find_or_create_by(name:"ブラウン")
+CategoryColor.find_or_create_by(name:"ベージュ")
+CategoryColor.find_or_create_by(name:"グリーン")
+CategoryColor.find_or_create_by(name:"カーキ")
+CategoryColor.find_or_create_by(name:"ブルー")
+CategoryColor.find_or_create_by(name:"ネイビー")
+CategoryColor.find_or_create_by(name:"パープル")
+CategoryColor.find_or_create_by(name:"ピンク")
+CategoryColor.find_or_create_by(name:"レッド")
+CategoryColor.find_or_create_by(name:"その他")
+
+CategorySeason.find_or_create_by(name:"Spring")
+CategorySeason.find_or_create_by(name:"Summer")
+CategorySeason.find_or_create_by(name:"Autumn")
+CategorySeason.find_or_create_by(name:"Winter")
+CategorySeason.find_or_create_by(name:"Other")

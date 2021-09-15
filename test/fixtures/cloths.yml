@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_item_id: 1
+  category_color_id: 1
+  category_season_id: 1
+  image: MyString
+  date: 2021-09-15
+  memo: MyString
+  price: 1
+
+two:
+  category_item_id: 1
+  category_color_id: 1
+  category_season_id: 1
+  image: MyString
+  date: 2021-09-15
+  memo: MyString
+  price: 1

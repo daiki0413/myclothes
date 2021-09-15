@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="category-name">
+        <h2><%=@categoryTag.name%></h2>
+    </div>
+    <div class="row">
+        <%@items.each do |item|%>
+            <div class="col-xs-6 col-md-3 thumbnail">
+                <%= link_to image_tag("/item_images/#{item.image}"), "/item/#{item.id}/edit" %>
+            </div>
+        <%end%>
+        <%=link_to("/new") do%>
+            <i class="fas fa-plus-circle plus"></i>
+        <%end%>
+    </div>
+</div>

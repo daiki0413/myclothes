@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+//navbarのフォント
+.navbar-brand, .navbar-nav, .category-name{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+//サクセスメッセージ
+.bg-info{
+    padding:20px 20px;
+    border-radius:5px;
+}
+.asterisk{
+    font-size: 10px;
+    color: red;
+    margin-left: 5px;
+}
+//登録
+.button{
+    padding-top: 30px;
+}
+//グリッドシステム縦幅
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+//プラスボタン
+.plus{
+    font-size: 50px;
+    color:blue;
+    position: fixed;
+    /*基準を画面の右下に*/
+    bottom: 10px;
+    right: 10px;
+    /*余白が入らないように*/
+    margin: 0;
+}
+//削除ボタン
+.trash{
+    width: 30px;
+    font-size: 30px;
+    position: relative;
+    bottom: 35px;
+    left: 90px;
+}
+.glyphicon-trash{
+    color:black;
+}
+//絞り込み機能
+.search{
+    margin-top: 20px;
+}

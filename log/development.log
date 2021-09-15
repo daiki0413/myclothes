@@ -1,0 +1,203 @@
+  [1m[35m (53.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (47.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCloths (20210915013136)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "cloths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category_item_id" integer, "category_color_id" integer, "category_season_id" integer, "image" varchar, "date" date, "memo" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210915013136"]]
+  [1m[35m (51.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-15 01:32:01.258176"], ["updated_at", "2021-09-15 01:32:01.258176"]]
+  [1m[35m (34.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20210915013243)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210915013243"]]
+  [1m[35m (51.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategories (20210915013310)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210915013310"]]
+  [1m[35m (63.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategorySeasons (20210915013317)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "category_seasons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210915013317"]]
+  [1m[35m (61.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategoryColors (20210915013327)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "category_colors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210915013327"]]
+  [1m[35m (52.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Tops"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tops"], ["created_at", "2021-09-15 01:43:42.981639"], ["updated_at", "2021-09-15 01:43:42.981639"]]
+  [1m[35m (38.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bottoms"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bottoms"], ["created_at", "2021-09-15 01:43:43.021750"], ["updated_at", "2021-09-15 01:43:43.021750"]]
+  [1m[35m (51.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Setup"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Setup"], ["created_at", "2021-09-15 01:43:43.076577"], ["updated_at", "2021-09-15 01:43:43.076577"]]
+  [1m[35m (42.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shoes"], ["created_at", "2021-09-15 01:43:43.121110"], ["updated_at", "2021-09-15 01:43:43.121110"]]
+  [1m[35m (34.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bag"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bag"], ["created_at", "2021-09-15 01:43:43.158299"], ["updated_at", "2021-09-15 01:43:43.158299"]]
+  [1m[35m (46.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Outer"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Outer"], ["created_at", "2021-09-15 01:43:43.206832"], ["updated_at", "2021-09-15 01:43:43.206832"]]
+  [1m[35m (38.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Dress"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dress"], ["created_at", "2021-09-15 01:43:43.248016"], ["updated_at", "2021-09-15 01:43:43.248016"]]
+  [1m[35m (47.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Accessory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Accessory"], ["created_at", "2021-09-15 01:43:43.298234"], ["updated_at", "2021-09-15 01:43:43.298234"]]
+  [1m[35m (38.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Other"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Other"], ["created_at", "2021-09-15 01:43:43.339544"], ["updated_at", "2021-09-15 01:43:43.339544"]]
+  [1m[35m (41.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ホワイト"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ホワイト"], ["created_at", "2021-09-15 01:43:43.387304"], ["updated_at", "2021-09-15 01:43:43.387304"]]
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブラック"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ブラック"], ["created_at", "2021-09-15 01:43:43.437076"], ["updated_at", "2021-09-15 01:43:43.437076"]]
+  [1m[35m (40.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "グレー"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "グレー"], ["created_at", "2021-09-15 01:43:43.480145"], ["updated_at", "2021-09-15 01:43:43.480145"]]
+  [1m[35m (35.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブラウン"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ブラウン"], ["created_at", "2021-09-15 01:43:43.517850"], ["updated_at", "2021-09-15 01:43:43.517850"]]
+  [1m[35m (35.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ベージュ"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ベージュ"], ["created_at", "2021-09-15 01:43:43.555951"], ["updated_at", "2021-09-15 01:43:43.555951"]]
+  [1m[35m (38.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "グリーン"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "グリーン"], ["created_at", "2021-09-15 01:43:43.596334"], ["updated_at", "2021-09-15 01:43:43.596334"]]
+  [1m[35m (42.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "カーキ"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "カーキ"], ["created_at", "2021-09-15 01:43:43.641730"], ["updated_at", "2021-09-15 01:43:43.641730"]]
+  [1m[35m (38.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブルー"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ブルー"], ["created_at", "2021-09-15 01:43:43.687358"], ["updated_at", "2021-09-15 01:43:43.687358"]]
+  [1m[35m (46.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ネイビー"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ネイビー"], ["created_at", "2021-09-15 01:43:43.735317"], ["updated_at", "2021-09-15 01:43:43.735317"]]
+  [1m[35m (39.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "パープル"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "パープル"], ["created_at", "2021-09-15 01:43:43.775797"], ["updated_at", "2021-09-15 01:43:43.775797"]]
+  [1m[35m (574.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ピンク"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ピンク"], ["created_at", "2021-09-15 01:43:44.352484"], ["updated_at", "2021-09-15 01:43:44.352484"]]
+  [1m[35m (34.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "レッド"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "レッド"], ["created_at", "2021-09-15 01:43:44.388877"], ["updated_at", "2021-09-15 01:43:44.388877"]]
+  [1m[35m (35.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "その他"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_colors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "その他"], ["created_at", "2021-09-15 01:43:44.426285"], ["updated_at", "2021-09-15 01:43:44.426285"]]
+  [1m[35m (35.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Spring"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_seasons" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Spring"], ["created_at", "2021-09-15 01:43:44.466914"], ["updated_at", "2021-09-15 01:43:44.466914"]]
+  [1m[35m (38.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Summer"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_seasons" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Summer"], ["created_at", "2021-09-15 01:43:44.507696"], ["updated_at", "2021-09-15 01:43:44.507696"]]
+  [1m[35m (39.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Autumn"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_seasons" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Autumn"], ["created_at", "2021-09-15 01:43:44.549424"], ["updated_at", "2021-09-15 01:43:44.549424"]]
+  [1m[35m (40.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Winter"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "category_seasons" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Winter"], ["created_at", "2021-09-15 01:43:44.591502"], ["updated_at", "2021-09-15 01:43:44.591502"]]
+  [1m[35m (35.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Other"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "category_seasons" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Other"], ["created_at", "2021-09-15 01:43:44.628859"], ["updated_at", "2021-09-15 01:43:44.628859"]]
+  [1m[35m (39.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Tops"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bottoms"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Setup"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bag"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Outer"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Dress"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Accessory"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Other"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ホワイト"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブラック"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "グレー"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブラウン"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ベージュ"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "グリーン"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "カーキ"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブルー"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ネイビー"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "パープル"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ピンク"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "レッド"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "その他"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Spring"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Summer"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Autumn"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Winter"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Other"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Tops"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bottoms"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Setup"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Bag"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Outer"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Dress"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Accessory"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Other"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ホワイト"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブラック"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "グレー"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.1ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブラウン"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ベージュ"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "グリーン"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "カーキ"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ブルー"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ネイビー"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "パープル"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "ピンク"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "レッド"], ["LIMIT", 1]]
+  [1m[36mCategoryColor Load (0.0ms)[0m  [1m[34mSELECT  "category_colors".* FROM "category_colors" WHERE "category_colors"."name" = ? LIMIT ?[0m  [["name", "その他"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Spring"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Summer"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Autumn"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.1ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Winter"], ["LIMIT", 1]]
+  [1m[36mCategorySeason Load (0.0ms)[0m  [1m[34mSELECT  "category_seasons".* FROM "category_seasons" WHERE "category_seasons"."name" = ? LIMIT ?[0m  [["name", "Other"], ["LIMIT", 1]]
